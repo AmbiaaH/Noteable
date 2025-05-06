@@ -1,0 +1,13 @@
+POST http://localhost:5172/api/notes
+Content-Type: application/json
+
+{
+  "title": "Test Note",
+  "preview": "This is a test note.",
+  "author": "Alice",
+  "category": "Chemistry"
+}
+
+GET http://localhost:5172/api/notes
+
+

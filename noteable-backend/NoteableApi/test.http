@@ -1,0 +1,29 @@
+@baseUrl = http://localhost:5172
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjZDZiZGVkMC02NDdmLTRmNjYtYmQ4Yy03MjI0NDExYzdkMGEiLCJ1bmlxdWVfbmFtZSI6ImFkbWluYW1iaWEiLCJlbWFpbCI6ImFkbWluYW1iaWFAZXhhbXBsZS5jb20iLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3NDI3NTA5NDAsImV4cCI6MTc0MzM1NTc0MCwiaWF0IjoxNzQyNzUwOTQwfQ.P1-FoaljKCaQn8NsH4ARNjNnIlZVhsKa6-vqDiPsKaA
+
+
+### Test API connectivity
+GET {{baseUrl}}/auth/ping
+
+### Login as admin
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "adminambia",
+  "password": "Adminambia123!"
+}
+
+### Get current user info (to verify roles)
+GET {{baseUrl}}/auth/currentuser
+Authorization: Bearer {{token}}
+
+### Assign Mentor role to a user
+POST {{baseUrl}}/auth/assignrole
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "username": "testuser",
+  "role": "Mentor"
+}
